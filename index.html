@@ -151,7 +151,7 @@
   <p>Overall, random oversampling slightly outperformed SMOTE in reducing fairness disparities for Florida residency. A fully balanced 50/50 oversampling split achieved the strongest fairness improvements, particularly for the unprivileged group, 
     while a 70/30 split still delivered meaningful fairness gains and preserved the best overall model performance. Although SMOTE improved some fairness metrics, its synthetic samples may not fully capture real applicant characteristics, 
     which can limit its effectiveness. 
-    Additionally, while oversampling proved effective, it introduces a risk of overfitting, highlighting the importance of balancing fairness improvements with model reliability.</p>/
+    Additionally, while oversampling proved effective, it introduces a risk of overfitting, highlighting the importance of balancing fairness improvements with model reliability.</p>
     
   <h2>IX. Conclusion & Future Work</h2>
  
@@ -185,8 +185,11 @@
       <ul>
         <li>The analysis is based on FIU’s Fall 2024 applicant data, which reflects the unique demographic makeup and institutional policies of a large Hispanic-serving public university in Florida. As a result, patterns observed here may not generalize to other universities.</li>
         <li>Admissions outcomes in 2024 may have been influenced by geopolitical or policy-driven considerations outside the scope of this study.</li>
+        
         <li>Certain features required assumptions due to missing or ambiguous information.</li>
+       
         <li>FIU, like many public universities, operates under state-level policies that influence admissions decisions.</li>
+       
         <li>Protected group definitions used in fairness evaluation (e.g., out-of-state vs. in-state, younger vs. older applicants) were tailored to this dataset. However, these definitions may differ in other states or institutions based on demographic composition, admissions priorities, or legal requirements.</li>
         <li>Each U.S. state operates under its own regulations regarding admissions, demographic reporting, and fairness considerations.</li>
       </ul>

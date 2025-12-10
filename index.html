@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Predictive Modeling and Fairness in Higher Education:<br>
+    <h1>Predictive Modeling and Fairness in Higher Education<br>
       <span class="subtitle">A Case Study with FIU Admissions Data</span></h1>
 
     <div class="project-info">
@@ -133,10 +133,25 @@
 
   <h2>VII. Fairness Evaluation</h2>
     <p>To assess whether model predictions differ across demographic groups, we evaluated fairness using multiple group-level metrics. These include Statistical Parity and Disparate Impact, which capture differences in selection rates between privileged and unprivileged groups, as well as Equal Opportunity and Equalized Odds, which measure disparities in true positive and error rates across groups. Together, these metrics provide a comprehensive view of both outcome-level and error-based fairness.</p>
-
     <p>The table below summarizes fairness results for each demographic attribute, highlighting where disparities are minimal and where larger gaps persist. This comparison helps identify which groups are most affected and motivates the focus of subsequent bias-mitigation experiments.</p>
 
     <img src="./figures/fairness_performance_results.png" alt="Fairness Evaluation Results" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
+    <h2>VIII. Bias Mitigation Techniques</h2>
+    <p>>Bias mitigation was performed using pre-processing re-sampling techniques on the worst performing feature (Florida Residency) including Random Oversampling and SMOTE, each evaluated under moderate and fully balanced configurations. These approaches rebalance the training data to reduce group disparities while preserving an unbiased evaluation on the test set.</p>
+    
+      <h3>A. Overall Model Performance</h3>
+        <p>While examinin the results of the overall model performance, the random oversampling (70/30) split performed the best.</p>
+        <img src="./figures/overall_model_performance.png" alt="Overall Model Performance" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
+    <h3>B. Fairness Evaluation Metrics</h3>
+    <p>For the Florida Residency feature, random oversampling (50/50) performed the best.</p>
+     <img src="./figures/FL_residency_metric.png" alt="Metrics for Florida Residency" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
+  <p>Overall, random oversampling slightly outperformed SMOTE in reducing fairness disparities for Florida residency. A fully balanced 50/50 oversampling split achieved the strongest fairness improvements, particularly for the unprivileged group, 
+    while a 70/30 split still delivered meaningful fairness gains and preserved the best overall model performance. Although SMOTE improved some fairness metrics, its synthetic samples may not fully capture real applicant characteristics, 
+    which can limit its effectiveness. 
+    Additionally, while oversampling proved effective, it introduces a risk of overfitting, highlighting the importance of balancing fairness improvements with model reliability.</p>/
     
   <h2>Conclusion & Future Work</h2>
  

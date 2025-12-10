@@ -104,13 +104,16 @@
     <img src="./figures/Data_Overview.png" alt="Data Overview Highlights" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
   <h2>V. EDA and Bias Investigation</h2>
+
     <h3>A. Visualization Findings</h3>
        <p>Exploratory visualizations revealed clear differences in admission outcomes across several demographic and application-related attributes. While gender showed relatively balanced admission rates, other factors such as Florida residency, application type, age, ethnicity, and region of birth exhibited substantial disparities. In-state applicants and non-first-time-in-college applicants experienced significantly higher admission rates, reflecting institutional policies and structural constraints. Additionally, older applicants and certain ethnic or geographic groups showed more favorable outcomes compared to younger and international applicants. These visual patterns suggest that disparities in admissions outcomes are largely driven by underlying data structure and institutional context rather than isolated model behavior, motivating deeper quantitative fairness analysis.</p>
+    
+    <p>The table below provides a concise summary of the most notable patterns noted in the exploratory analysis:</p>
     <img src="./figures/Summary_of_Differences.png" alt="Summary of Visualization Findings" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
     <h3>B. Quantitative Metrics Analysis</h3>
         <p>To quantify disparities observed in the exploratory visualizations, we evaluated group-level fairness using Selection Rate, Weighted Selection Rate, and Entropy difference metrics. These measures provide complementary perspectives on how admission outcomes vary across demographic groups.</p>
-      <p>The below table summarizes the differences per metric and demographic feature.</p>
+      <p>The below table summarizes the differences per demographic feature:</p>
     <img src="./figures/Summary_of_Differences_Visualization.png" alt="Summary of Differences" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
 <h2>VI. Methodology and Model Performance</h2>
@@ -141,11 +144,11 @@
     <p>Bias mitigation was performed using pre-processing re-sampling techniques on the worst performing feature (Florida Residency) including Random Oversampling and SMOTE, each evaluated under moderate and fully balanced configurations. These approaches rebalance the training data to reduce group disparities while preserving an unbiased evaluation on the test set.</p>
     
       <h3>A. Overall Model Performance</h3>
-        <p>While examinin the results of the overall model performance, the random oversampling (70/30) split performed the best.</p>
+        <p>Among the mitigation strategies, random oversampling (70/30) achieved the best balance between predictive performance and stability, preserving accuracy while avoiding the larger trade-offs of fully balanced re-sampling.</p>
         <img src="./figures/overall_model_performance.png" alt="Overall Model Performance" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
     <h3>B. Fairness Evaluation Metrics</h3>
-    <p>For the Florida Residency feature, random oversampling (50/50) performed the best.</p>
+    <p>Across all experiments, bias mitigation techniques consistently improved fairness metrics for Florida residency relative to the baseline, with random oversampling (50/50) achieving the strongest overall fairness improvements.</p>
      <img src="./figures/FL_residency_metric.png" alt="Metrics for Florida Residency" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
   <p>Overall, random oversampling slightly outperformed SMOTE in reducing fairness disparities for Florida residency. A fully balanced 50/50 oversampling split achieved the strongest fairness improvements, particularly for the unprivileged group, 
@@ -176,7 +179,7 @@
         We would also like to explore more fairness-aware algoriths and bias mitigation techniques so that we could expand the potential of the models.
         As for our analysis we would like to explore more fairness metrics and also see how the models perform accross different intersectional groups.
         We would also want to split the analysis accross different application types to see if there are any trends that are specific to certain application type.
-        Lastly we would want to explore deeper into trends happening overtime in relation to the semester cohorts being admitted.
+        Lastly, we would want to explore deeper into trends happening overtime in relation to the semester cohorts being admitted.
       </p>
  
     <h2>X. Limitations</h2>

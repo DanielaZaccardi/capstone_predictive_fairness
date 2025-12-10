@@ -26,4 +26,4 @@ Predictive models are increasingly used in university admissions, offering oppor
 [View Presentation Slides](Capstone_Predictive_Fairness_Presentation.pdf)
 
 ### Dataset
-FIU-provided dataset (restricted access)
+FIU-provided dataset

@@ -1,15 +1,9 @@
 <div align="center">
-
-*IDC-6940: Capstone Project in Data Science*
-
-*Osmel Cereijo and Daniela Zaccardi*
-
-*Knight Foundation School of Computing and Information Science*
-
-*Florida International University*
-
-*Course Instructor: Dr. Ananda M. Mondal*
-
+*IDC-6940: Capstone Project in Data Science*<br>
+*Osmel Cereijo and Daniela Zaccardi*<br>
+*Knight Foundation School of Computing and Information Science*<br>
+*Florida International University*<br>
+*Course Instructor: Dr. Ananda M. Mondal*<br>
 *Mentor: Dr. Agoritsa Polyzou*
 </div>
 

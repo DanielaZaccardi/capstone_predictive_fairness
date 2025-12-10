@@ -98,6 +98,23 @@
     <h3>C. List of Features</h3>
     <p>Following data cleaning, consolidation, and feature selection, the final set of features retained for modeling and fairness evaluation is shown below.</p>
     <img src="./figures/Reduced_Feature_List.png" alt="Summary of Data Preparation Workflow" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
+    <h3>D. Data Overview</h3>
+    <p>The final dataset represents a diverse undergraduate applicant population from FIU’s Fall 2024 admissions cycle. Approximately half of the applicants were admitted, reflecting a moderately selective admissions process. Most applicants were first-time-in-college students, traditional college age, and Florida residents, consistent with FIU’s role as a large public university serving the state population. The applicant pool is ethnically diverse, with Hispanic/Latino applicants representing the largest group, followed by non-resident alien, White, and Black or African American applicants. Overall, the dataset captures meaningful variation across academic background, application type, and demographic characteristics, providing a strong foundation for both predictive modeling and fairness analysis.</p>
+    <img src="./figures/Data_Overview.png" alt="Data Overview Highlights" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
+  <h2>V. EDA and Bias Investigation</h2>
+    <h3>A. Visualization Findings</h3>
+       <p>Exploratory visualizations revealed clear differences in admission outcomes across several demographic and application-related attributes. While gender showed relatively balanced admission rates, other factors such as Florida residency, application type, age, ethnicity, and region of birth exhibited substantial disparities. In-state applicants and non-first-time-in-college applicants experienced significantly higher admission rates, reflecting institutional policies and structural constraints. Additionally, older applicants and certain ethnic or geographic groups showed more favorable outcomes compared to younger and international applicants. These visual patterns suggest that disparities in admissions outcomes are largely driven by underlying data structure and institutional context rather than isolated model behavior, motivating deeper quantitative fairness analysis.</p>
+    <img src="./figures/Summary_of_Differences.png" alt="Summary of Visualization Findings" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
+    <h3>B. Quantitative Metrics Analysis</h3>
+       <p></p>
+        <p>To quantify disparities observed in the exploratory visualizations, we evaluated group-level fairness using Selection Rate, Weighted Selection Rate, and Entropy difference metrics. These measures provide complementary perspectives on how admission outcomes vary across demographic groups.</p>
+      <p>The below table summarizes the differences per metric and demographic feature. Entropy differences color-highlights represent: gray (neutral/no change), green (diversity increased), and red (diversity decreased).</p>
+    <img src="./figures/Summary_of_Visualization_Findings.png" alt="Summary of Differences" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
+
     
   <h2>Conclusion & Future Work</h2>
  

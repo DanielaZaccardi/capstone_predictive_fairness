@@ -1,4 +1,10 @@
 *IDC-6940: Capstone Project in Data Science*
+*Osmel Cereijo and Daniela Zaccardi*
+*Knight Foundation School of Computing and Information Science*
+*Florida International University*
+*Course Instructor: Dr. Ananda M. Mondal*
+*Mentor: Dr. Agoritsa Polyzou*
+
 # Predictive Modeling and Fairness in Higher Education: A Case Study with FIU Admissions Data
 A case study on predictive modeling and algorithmic fairness using Florida International University (FIU) undergraduate admissions data, exploring bias detection, mitigation techniques, and model performance trade-offs.
 
@@ -8,10 +14,13 @@ Predictive models are increasingly used in university admissions, offering oppor
 *Keywords: predictive modeling, algorithmic fairness, admissions, machine learning classification, bias mitigation.
 
 ### Project Summary
-[Visit Webpage]( )
+[Visit Webpage](Report_Predictive Modeling and Fairness in Higher Education.pdf)
+
+### Project Report
+[View Presentation Slides](Capstone_Predictive_Fairness_Presentation.pdf)
 
 ### Presentation Slides
-[View Presentation Slides]( )
+[View Presentation Slides](Capstone_Predictive_Fairness_Presentation.pdf)
 
 ### Dataset
-FIU Undergraduate Applicants Fall 2024
+FIU-provided dataset (restricted access)

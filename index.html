@@ -39,32 +39,37 @@
             
     <h2>I. Introduction</h2>
       <h3>A. Background</h3>
-      <p> </p>
+      <p>Universities increasingly rely on predictive modeling and machine learning to support undergraduate admissions decisions, aiming to improve consistency and efficiency when evaluating large applicant pools. 
+        While these models can achieve strong predictive performance, they also raise concerns about fairness, as historical admissions data may encode structural inequalities related to academic preparation, residency policies, or demographic characteristics. 
+        If left unexamined, predictive systems risk reinforcing or amplifying these disparities. 
+        This project examines both the predictive accuracy and fairness of machine learning models applied to real undergraduate admissions data from Florida International University (FIU).</p>
       
     <h3>B. Goals and Objectives</h3>
-      <p>
+      <p>The primary goal of this project is to evaluate whether machine learning models used for admissions prediction can deliver accurate results while maintaining fairness across demographic groups.
+        To achieve this, the project focuses on three key objectives:
       <ul>
-        <li>Explore how machine learning models can develop bias across different groups</li>
-        <li>Investigate methods to alleviate bias while maintaining predictive accuracy​</li>
-      </ul>
-
-      <ul>
-        <li>Predict admissions outcomes using  student admission data</li>
-        <li>Evaluate fairness across demographic groups</li>
-        <li>Determine the best methods to remove the most amount of bias possible from models<\li>
+        <li>Predict admissions outcomes using FIU’s Fall 2024 undergraduate applicant dataset and identify which features contribute most strongly to model predictions.</li>
+        <li>Evaluate fairness across different demographic groups to determine whether models exhibit disparate outcomes or measurable bias.</li>
+        <li>Investigate which bias mitigation methods are most effective at reducing disparities while retaining strong model performance.<\li>
       </ul>
       </p>
 
     <h3>C. Research Questions</h3>
       <ul>
-        <li>How extensive and severe is housing insecurity in U.S. metropolitan areas?</li>
-        <li>What characteristics best represent renters facing housing insecurity?</li>
-        <li>Do housing policies, such as subsidized housing and rental assistance, contribute to addressing housing insecurity?</li>
-        <li>What characteristics best predict severe housing insecurity?</li>
+        <li>How accurately can we predict admissions decisions?</li>
+        <li>What features most strongly influence predictions?</li>
+        <li>Does the model have bias, and if yes, which groups are the most effected?​</li>
+        <li>If bias exists, is it harmful or justifiable?​</li>
+        <li>What methods can detect, measure, and mitigate bias?​</li>
+        <li>How much bias can be effectively reduced without sacrificing accuracy?​</li>
       </ul>
 
     <h3>D. Motivation</h3>
-
+      <p>Admissions decisions play a critical role in shaping students’ educational opportunities and long-term outcomes. 
+        As predictive analytics become more integrated into institutional decision-making, there is growing legal, societal, and ethical pressure to ensure that these systems operate transparently and fairly. 
+        Public scrutiny of admissions practices and increasing awareness of algorithmic bias highlight the need for rigorous evaluation of both model performance and equity. 
+        Motivated by these concerns, this project seeks to provide evidence-based insight into how fairness issues emerge in admissions modeling and how they can be addressed responsibly without undermining model reliability.</p>
+    
     <h2>II. Dataset and Research Approach</h2>
       
     <h3>A. Dataset</h3>
@@ -74,7 +79,7 @@
         I divided the sample into four income groups based on the 2021 federal poverty levels. 
         Using annual income values for 100%, 200%, and 400% of the poverty levels, I have four income groups: very low-income (N=6830), low-income (N=4887), modest-income (N=5318), and higher-income (N=4993).</p>
 
-    <h3>B. Research Approach</h3>
+    <h3>B. Data Quality & Challenges</h3>
       <img src="./plots/research_approach.png" alt="Research Approach Diagram" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
     <h2>III. Phase I: Explore Housing Insecurity Predictors</h2>

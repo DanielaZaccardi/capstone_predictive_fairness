@@ -17,7 +17,7 @@ Predictive models are increasingly used in university admissions, offering oppor
 **Keywords:** predictive modeling, algorithmic fairness, admissions, machine learning classification, bias mitigation.
 
 ### Project Summary
-[Visit Webpage](Report_Predictive Modeling and Fairness in Higher Education.pdf)
+[Visit Webpage]([Report_Predictive Modeling and Fairness in Higher Education.pdf](https://danielazaccardi.github.io/capstone_predictive_fairness/))
 
 ### Project Report
 [View Project Report](https://github.com/DanielaZaccardi/capstone_predictive_fairness/blob/main/Report_Predictive%20Modeling%20and%20Fairness%20in%20Higher%20Education.pdf)

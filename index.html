@@ -31,8 +31,7 @@
           <a href="https://github.com/DanielaZaccardi/capstone_predictive_fairness">View on GitHub</a>
         </li>
         <li>
-          Dataset:
-          <p>FIU-provided dataset (restricted access)</p>
+          Dataset: FIU-provided dataset (restricted access)
     </li>
       </ul>
     </div>
@@ -87,159 +86,53 @@
       
     <h3>A. Data Source and Size</h3>
       <p>This project uses an anonymized undergraduate admissions dataset provided by Florida International University (FIU) admissions for Fall 2024 applicants.</p>
-      <p>After filtering to undergraduate applicants only, the final dataset contains approximately 30K applicants with 42 original features describing demographic attributes, academic background, standardized testing, and application details.</p>
-      <p>Below is a sample applicant's with the original features:</p>
+      <p>After filtering to undergraduate applicants only, the final dataset contains ~30K applicants with 42 original features describing demographic attributes, academic background, standardized testing, and application details.</p>
         <img src="./figures/Sample_Applicant.png" alt="Sample Applicant Data" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
     
-    <h4>B. Data Quality & Challenges</h4>
-      <img src="./plots/research_approach.png" alt="Research Approach Diagram" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+    <h3>B. Data Quality & Challenges</h3>
+      <img src="./figures/Data_Quality_Challenges.png" alt="Summary of Data Quality and Challenges" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
-    <h2>III. Phase I: Explore Housing Insecurity Predictors</h2>
-
-    <h3>A. Select Housing Insecurity Predictors</h3>
-      <p>From the AHS dataset, I selected several characteristics of renters (including householder and household characteristics), houses, and communities, along with housing policies and regions, as the predictors. 
-        The table below presents summary statistics for the variables (predictors) selected for the analysis.</p>
-
-      <img src="./plots/variable_summary_statistics.png" alt="Variable Summary Table" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>B. Exploratory Data Analysis (EDA)</h3> 
-      <img src="./plots/householder.jpg" alt="Householder Characteristics Plots" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-      <img src="./plots/household.jpg" alt="Household Characteristics Plots" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-      <img src="./plots/community.jpg" alt="Community Characteristics Plots" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-      <img src="./plots/housing_policies.jpg" alt="Housing Policies Plots" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-  
-    <h2>IV. Phase II: Create a Composite Index of Housing Insecurity</h2>
-
-    <h3>A. Determine Key Dimensions of Housing Insecurity</h3>
-      <p>Based on a review of the existing literature, I determined key dimensions of housing insecurity as Residential Instability, Unfitness and Inadequacy, and Unaffordability</p>
-
-      <img src="./plots/housing_insecurity_dimensions.png" alt="Housing Insecurity Dimensions" style="width: 90%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>B. Create Indicators to Measure Housing Insecurity</h3>
-      <p>To measure the key dimensions of housing insecurity, I selected several variables for each dimension from the 2021 AHS dataset and transformed them into nine binary indicators.</p>
-
-      <img src="./plots/indicators.png" alt="Binary Indicators" style="width: 90%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>C. Factor Analysis to Validate Dimensions of Housing Insecurity</h3>
-      <p>I conducted an exploratory factor analysis (EFA) to examine whether the underlying structure of the nine indicators aligns with the three dimensions of housing security. 
-        The EFA results confirm the three-dimensional structure is appropriate, with the nine indicators effectively representing the three dimensions. 
-        The scree plot support the adequacy of retaining three dimensions. 
-        Also, the high factor loadings of the nine indicators provide evidence for the validity of the three key dimensions they represent.</p>
-      
-      <table style="width: 100%; text-align: center; margin: 20px auto;">
-        <tr>
-          <td style="width: 40%;">
-            <img src="./plots/screeplot.png" alt="Screeplot" style="width: 100%; max-width: 400px;">
-          </td>
-          <td style="width: 60%;">
-            <img src="./plots/factor_loadings.png" alt="Factor Loadings" style="width: 100%; max-width: 700px;">
-          </td>
-        </tr>
-      </table>
-
-    <h3>D. Create a Composite Index</h3>
-      <p>I created the composite index of housing insecurity by summing all nine indicators. 
-        The values of this index range from 0 to 8. 
-        The higher the index value, the more severe the housing insecurity. 
-        A value of 0 means that a household faces housing security. A value of 1 or higher indicates housing insecurity, and a value of 3 or higher indicates severe housing insecurity.</p>
-
-      <img src="./plots/freq_renters.png" alt="Frequency of Renters by the Composite Index and Income Level" style="width: 90%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>E. Examine Extent and Severity of Housing Insecurity</h3>
-      <p>Overall, 48.6% of renters face housing insecurity, including 22.0% who face two forms of housing insecurity (index value=2) and 6.9% who face severe housing insecurity (index value≥3).
-        In the very low-income group, 87.7% face housing insecurity, including 53.4% who face two forms and 17.2% face severe housing insecurity. 
-        These findings highlight the strong relationship between income level and housing insecurity among metropolitan renters.
-      </p>
-
-      <img src="./plots/renters_by_composite_index.png" alt="Distribution of Renters based on the Composite Index" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h2>V. Phase III: Estimate Housing Insecurity Models Across Income Levels</h2>
-
-    <h3>A. Preprocessing</h3>
-      <p>Due to the small number of observations for certain index values in the composite index of housing insecurity, values of 3 and higher were combined into a single value of 3 for the very low- and low-income groups. Similarly, for the modest- and higher-income groups, values of 2 and higher were combined into a single value of 2.</p>
-
-    <h3>B. Establish Variables</h3>
-      <img src="./plots/variables_phase3.png" alt="Variables for Housing Insecurity Models" style="width: 90%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>C. Estimate Partial Proportional Odds (PPO) Models</h3>
-      <p>I used a partial proportional odds model to estimate the impact of the predictors on housing insecurity across four income groups.
-        This is an extended ordinal regression model that offers flexibility by allowing predictors to have varying effects across levels of housing insecurity.
-
-    <h3>D. Summary of the Four PPO Models</h3>
-      <p> The table below shows relative risk ratios for statistically significant variables in PPO models.<p>
-        
-      <img src="./plots/ppo_models.png" alt="Summary of the PPO Models" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h2>VI. Phase IV: Build a Predictive Model for Housing Insecurity</h2>
-
-    <h3>A. Preprocessing</h3>
-      <p>I combined all four renter groups to build a predictive model.  
-        I split the entire dataset (N=22027) into a training set (80%, N=17621) and a test set (20%, N=4406). 
-        To balance the composite index's observations across classes, I applied Random Under-sampling and Synthetic Minority Over-sampling Technique for Nominal and Continuous features (SMOTE-NC) to the training set. 
-        Before sampling, the class frequencies for the composite index of housing insecurity were: 9064 for class 0, 3869 for class 1, 3466 for class 2, and 1222 for class 3. 
-        After sampling, the frequencies were balanced to 3869 for each class, resulting in a total of 15476 observations in the training set
-      </p>
-
-    <h3>B. Establish Variables</h3>
-      <p>The dependent variable is the Preprocessed Composite Index, where 3 and higher in the composite index of housing insecurity were grouped into a single value of 3. 
-        The independent variables are the same as in phase III, plus the 'ln_income' variable (the natural logarithm of the 'Income'). 
-        the numerical variables ('Householder's age,' 'Number of household members,' 'ln_Income,' and 'Age of house') were standardized.</p>
-
-    <h3>C. Build Multiclass Classification Models</h3>
-      <p>To build a predictive model for housing insecurity, I explored four multiclass classification models: Random Forest, XGBoost, Logistic Regression, and Support Vector Machine (SVM). 
-        I used 5-fold cross-validation to optimize hyperparameters. </p>
-
-      <img src="./plots/hyperparameters.png" alt="Hyperparameters" style="width: 90%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>D. Model Performance Comparison</h3>
-      <p>Of all four models, XGBoost shows the best performance with the highest Test Accuracy (0.626) and Test F1-Score (0.641). </p>
-
-      <img src="./plots/model_performance_comparison.png" alt="Model Performance Comparison" style="width: 90%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>E. Feature Importance for the Best Performing Model</h3>
-      <p>I examined feature importance and beeswarm plots for XGBoost, the best-performing model, using SHAP (Shapley Additive exPlanations) values. 
-        SHAP is a method for explaining the output of machine learning models by quantifying the contribution of each feature to the model's prediction. 
-        SHAP values are calculated based on Shapley values, which represent the weighted average of a feature's marginal contributions across all possible subsets of features. 
-        This approach ensures scale-invariance, meaning that SHAP values prevent distortions and misinterpretations caused by scaling features.</p>
-      <p>Below are the plots for composite index values of 0 and 3+, which provide meaningful insights.
-        The former illustrates the top 10 features that determine whether a household is doing well or facing housing insecurity, while the latter illustrates the top 10 features that determine whether a household is experiencing severe housing insecurity.</p>
-
-      <img src="./plots/feature_importance_beeswarm.png" alt="Feature Importance and Beswarm Plots" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h2>VII. Discussion and Conclusion</h2>
-
-    <h3>A. Discussion #1: How extensive and severe is housing insecurity in U.S. metropolitan areas?</h3>
-      <p>In U.S. metropolitan areas, nearly half of all renters (48.6%) face some form of housing insecurity, with 6.9% facing severe housing insecurity. 
-        Among the very low-income group, 87.7% face housing insecurity, with 17.2% facing severe housing insecurity. 
-        Given the disproportionately high risk faced by the very low-income renters, policies need to prioritize this group (renters below the poverty level) to address their severe housing insecurity. </p>
-
-    <h3>B. Discussion #2: What characteristics best represent renters facing housing insecurity?</h3>
-      <p>Belonging to specific householder race groups (Black or other racial minorities), having disabled household members, and living in communities with no good schools or with high levels of serious crime are associated with a greater risk of housing insecurity at all income levels. 
-        Among lower-income renters (i.e., the very low- or low-income groups), unmarried householders, households without seniors or with fewer members, and those living in communities with high disaster risk are particularly vulnerable.  
-
-      <img src="./plots/characteristics_of_renters_at_housing_insecurity.png" alt="Fig. 24.	Key Characteristics of Renters at Higher Risk of Housing Insecurity" style="width: 90%; max-width: 800px; display: block; margin: 20px auto;">
-        
-    <h3>C. Discussion #3: Do housing policies contribute to addressing housing insecurity?</h3>
-      <p>Subsidized housing and rental assistance significantly reduce the risk of housing insecurity among the very low- and low-income groups. 
-        These two housing policies are most effective for households on the brink of housing insecurity, rather than for those already facing it, particularly within the very low-income group. 
-        For example, for the very low-income renters in subsidized housing, the risk of housing insecurity is only 12% of the relative risk for those without assistance.</p>
-
-      <img src="./plots/hud_assistance_coefs.png" alt="Coefficients of HUD Assistance Variables" style="width: 90%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>D. Discussion #4: What characteristics best predict severe housing insecurity?</h3>
-      <p>Income is the most important characteristic in determining both housing security and severe housing insecurity. 
-        However, its importance decreases when determining severe housing insecurity compared to housing insecurity. 
-        Other renter and community characteristics ('High levels of petty crime,' 'Presence (or absence) of seniors,' 'Householder age and gender,' and 'Number of household members') contribute more to determining severe housing insecurity than to determining housing insecurity, even though their contribution is still lower than that of income. 
-        This suggests the possibility that renter and community characteristics play a crucial role in renters facing severe housing insecurity. 
-        To better understand the characteristics contributing to severe housing insecurity, future research should closely examine the household and community conditions of renters who are facing this issue.</p>
-
-    <h2>E. Conclusion</h2>
-
-    <h3>Key Findings</h3>
-      <p>In our research we determined that all the models performed consistently strong across the board. 
-        Our analysis of the fairness metrics revealed consistent disparities across certain minority groups. 
+    <h3>C. Data Preparation & Constraints</h3>
+      <p>The dataset contained substantial missing values, particularly for standardized test scores and GPA measures. 
+        To address this, features with excessive missingness were removed, remaining values were consolidated where appropriate, and missingness indicators were added to preserve information without introducing bias.</p>
+    
+  <h2>Conclusion & Future Work</h2>
+ 
+    <h3>Conclusion</h3>
+      <p>
+        In our research we determined that all the models performed consistently strong across the board.
+        Our analysis of the fairness metrics revealed consistent disparities across certain minority groups.
         Our findings also indicate that alot of the issues presented throughout the research were mostly data-driven structural patterns, not model specific.
-        Lastly we also investigated and found that the demographic features of our data were not the top predictors for the models. </p>
+        Lastly we also investigated and found that the demographic features of our data were not the top predictors for the models.
+      </p>
+       
+      <p>
+        Our applied pre-processing techniques signficantly impoved the fairness metrics of our model.
+        The predictive proformance of our models remained strong both when specifically targetting a group and also overall.
+        We also determined that fairness can be improved without sacrificing to much accuracy from the models.
+      </p>
+ 
+    <h3>Future Work</h3>
+      <p>
+        We hope that in the future for this research we incoporate more semesters and additional demographic features that we saddly not provided in our original dataset.
+        Things like the extra curriculars that the applciant has done, as well as other details that could help us infer more info of what the current situation for the applicant is.
+        We would also like to explore more fairness-aware algoriths and bias mitigation techniques so that we could expand the potential of the models.
+        As for our analysis we would like to explore more fairness metrics and also see how the models perform accross different intersectional groups.
+        We would also want to split the analysis accross different application types to see if there are any trends that are specific to certain application type.
+        Lastly we would want to explore deeper into trends happening overtime in relation to the semester cohorts being admitted.
+      </p>
+ 
+    <h2>Limitations</h2>
+      <p>While this study provides meaningful insights into fairness and predictive modeling within undergraduate admissions, several limitations should be considered when interpreting the results.</p>
+ 
+      <ul>
+        <li>The analysis is based on FIU’s Fall 2024 applicant data, which reflects the unique demographic makeup and institutional policies of a large Hispanic-serving public university in Florida. As a result, patterns observed here may not generalize to other universities.</li>
+        <li>Admissions outcomes in 2024 may have been influenced by geopolitical or policy-driven considerations outside the scope of this study.</li>
+        <li>Certain features required assumptions due to missing or ambiguous information.</li>
+        <li>FIU, like many public universities, operates under state-level policies that influence admissions decisions.</li>
+        <li>Protected group definitions used in fairness evaluation (e.g., out-of-state vs. in-state, younger vs. older applicants) were tailored to this dataset. However, these definitions may differ in other states or institutions based on demographic composition, admissions priorities, or legal requirements.</li>
+        <li>Each U.S. state operates under its own regulations regarding admissions, demographic reporting, and fairness considerations.</li>
+      </ul>
     
   </div>
 </body>

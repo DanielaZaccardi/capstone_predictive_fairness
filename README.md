@@ -1,4 +1,5 @@
-<div align="center">  
+<div align="center">
+
 *IDC-6940: Capstone Project in Data Science*
 
 *Osmel Cereijo and Daniela Zaccardi*

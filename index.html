@@ -113,7 +113,7 @@
       <p>The below table summarizes the differences per metric and demographic feature. Entropy differences color-highlights represent: gray (neutral/no change), green (diversity increased), and red (diversity decreased).</p>
     <img src="./figures/Summary_of_Visualization_Findings.png" alt="Summary of Differences" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
-<h2>VI. Methodology</h2>
+<h2>VI. Methodology and Model Performance</h2>
      <h3>A. Experimental Set-Up</h3>
     <p>The experimental workflow for this study follows the below steps: </p>
     <ol>
@@ -130,6 +130,13 @@
     <p>Feature importance was analyzed across the top-performing models to identify which attributes most strongly influenced admissions predictions. Across all models, academic preparation and application-related features—such as admission type, high-school GPA, and standardized test scores, consistently ranked among the most influential predictors. In contrast, demographic attributes were not among the top drivers of model decisions, suggesting that predictive performance is largely guided by academic and structural factors rather than sensitive characteristics.</p>
     <img src="./figures/feature_of_importance.png" alt="Top 10 Feature Importance" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
     <p>Note: Logistic Regression coefficients were normalized to sum to 1 for comparison purposes.</p>
+
+  <h2>VII. Fairness Evaluation</h2>
+    <p>To assess whether model predictions differ across demographic groups, we evaluated fairness using multiple group-level metrics. These include Statistical Parity and Disparate Impact, which capture differences in selection rates between privileged and unprivileged groups, as well as Equal Opportunity and Equalized Odds, which measure disparities in true positive and error rates across groups. Together, these metrics provide a comprehensive view of both outcome-level and error-based fairness.</p>
+
+    <p>The table below summarizes fairness results for each demographic attribute, highlighting where disparities are minimal and where larger gaps persist. This comparison helps identify which groups are most affected and motivates the focus of subsequent bias-mitigation experiments.</p>
+
+    <img src="./figures/fairness_performance_results.png" alt="Fairness Evaluation Results" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
     
   <h2>Conclusion & Future Work</h2>
  

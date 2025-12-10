@@ -114,6 +114,21 @@
       <p>The below table summarizes the differences per metric and demographic feature. Entropy differences color-highlights represent: gray (neutral/no change), green (diversity increased), and red (diversity decreased).</p>
     <img src="./figures/Summary_of_Visualization_Findings.png" alt="Summary of Differences" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
 
+<h2>VI. Methodology</h2>
+     <h3>A. Experimental Set-Up</h3>
+    <p>The experimental workflow for this study follows the below steps: </p>
+    <ol>
+      <li>Split the dataset into training (80%) and test (20%) sets using a stratified split to preserve the original admission rate.</li>
+        <li>Applied data pre-processing on the training set, including discretization of continuous features using k-means clustering and one-hot encoding of categorical variables.</li>
+          <li>Performed hyperparameter tuning using 5-fold cross-validation to identify optimal model configurations.</li>
+            <li>Retrained each model using the selected hyperparameters on the full training set.</li>
+              <li>Evaluated final model performance on the held-out test set and compared results across models.</li>
+            </ol>
+    <h3>B. Baseline Model Selection</h3>
+    <p></p>Several models were evaluated for admissions prediction, all achieving strong performance. Random Forest emerged as the best-performing model and was therefore selected as the baseline for further fairness evaluation and mitigation.</p>
+    
+    <img src="./figures/model_table.png" alt="Model Performance Results" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
 
     
   <h2>Conclusion & Future Work</h2>

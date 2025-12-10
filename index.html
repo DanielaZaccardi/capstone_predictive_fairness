@@ -89,12 +89,15 @@
       <p>After filtering to undergraduate applicants only, the final dataset contains ~30K applicants with 42 original features describing demographic attributes, academic background, standardized testing, and application details.</p>
         <img src="./figures/Sample_Applicant.png" alt="Sample Applicant Data" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
     
-    <h3>B. Data Quality & Challenges</h3>
-      <img src="./figures/Data_Quality_Challenges.png" alt="Summary of Data Quality and Challenges" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
-
-    <h3>C. Data Preparation & Constraints</h3>
+    <h3>B. Data Preparation & Constraints</h3>
       <p>The dataset contained substantial missing values, particularly for standardized test scores and GPA measures. 
         To address this, features with excessive missingness were removed, remaining values were consolidated where appropriate, and missingness indicators were added to preserve information without introducing bias.</p>
+    <p>Bellow is a summary of the data preparation workflow:</p>
+      <img src="./figures/Data_Preparation_Workflow.png" alt="Summary of Data Preparation Workflow" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
+
+    <h3>C. List of Features</h3>
+    <p>Following data cleaning, consolidation, and feature selection, the final set of features retained for modeling and fairness evaluation is shown below.</p>
+    <img src="./figures/Reduced_Feature_List.png" alt="Summary of Data Preparation Workflow" style="width: 100%; max-width: 800px; display: block; margin: 20px auto;">
     
   <h2>Conclusion & Future Work</h2>
  

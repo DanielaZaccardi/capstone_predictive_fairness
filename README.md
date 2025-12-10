@@ -1,5 +1,5 @@
 <div align="center">
-*IDC-6940: Capstone Project in Data Science*<br>
+IDC-6940: Capstone Project in Data Science<br>
 *Osmel Cereijo and Daniela Zaccardi*<br>
 *Knight Foundation School of Computing and Information Science*<br>
 *Florida International University*<br>
